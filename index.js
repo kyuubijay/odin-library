@@ -48,7 +48,8 @@ function showBooks() {
     for (const book of book_library) {
         // if(book.show) continue;
         $('#list-books').addClass('ui cards');
-        $('#list-books')[0].innerHTML = `
+
+        $('#list-books')[0].innerHTML = $('#list-books')[0].innerHTML + `
             <div class="card">
                 <div class="image">
                     <img src="img/book-cover.png">
@@ -114,12 +115,15 @@ $('#add-book-btn').click(function () {
 function clearLibrary() {
     console.log('clearing');
     $('#list-books').removeClass('ui cards');
-    $('#list-books')[0].innerHTML = `
-        <div class="card">
-            <div class="image">
-                <img src="img/empty.png">
-            </div>
-        </div>`
+    $('#list-books')[0].innerHTML = ''
+    if(book_library.size == 0) {
+        $('#list-books')[0].innerHTML = `
+            <div class="card">
+                <div class="image">
+                    <img src="img/empty.png">
+                </div>
+            </div>`
+    }
 }
 
 function removeAllChildNodes(parent) {
