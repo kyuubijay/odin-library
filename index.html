@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/semantic.min.css" type="text/css">
+    <link rel="stylesheet" href="style/modal.min.css" type="text/css">
+    <link rel="stylesheet" href="style/icon.min.css" type="text/css">
+    <link rel="stylesheet" href="style/index.css" type="text/css">
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"
+        integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script src="style/semantic.min.js"></script>
+    <script src="style/modal.min.js"></script>
+
+    <title>Book Library</title>
+</head>
+
+<body>
+    <div class="ui large top fixed hidden menu">
+        <div class="ui container">
+            <a class="active item">Home</a>
+
+        </div>
+
+    </div>
+    <div class="pusher">
+        <div class="ui vertical masthead aligned segment">
+
+            <div class="ui container">
+                <div class="ui large secondary inverted pointing menu"></div>
+                <div id="list-books">
+
+                </div>
+                <button id="add-book-modal-btn" class="ui active button">
+                    <i class="plus icon"></i>
+                    Add Book
+                </button>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="ui modal">
+        <i class="close icon"></i>
+        <div class="header">
+            Add Book
+        </div>
+        <div class="content">
+            <form class="ui form" id="add-book-form">
+                <div class="field">
+                    <label>Title</label>
+                    <input value='test' type="text" id="title" name="title" placeholder="Title of the Book">
+                </div>
+                <div class="field">
+                    <label>Author</label>
+                    <input value='test' type="text" id="author" name="author" placeholder="Name of Author">
+                </div>
+                <div class="field">
+                    <label>Pages</label>
+                    <input value='1' type="number" id="pages" name="pages" placeholder="Number of Pages">
+                </div>
+                <div class="field">
+                    <label>Language</label>
+                    <input value='test' type="text" id="language" name="language" placeholder="Language">
+                </div>
+                <div class="field">
+                    <label>Date Published</label>
+                    <input value='07/20/2022' type="date" id="publishing_date" name="publishing_date"
+                        placeholder="Date Published">
+                </div>
+
+                <div class="field">
+                    <label>Summary</label>
+                    <textarea rows="4" name="summary"></textarea>
+                </div>
+
+                <div class="field">
+                    <div class="ui toggle checkbox">
+                        <input type="checkbox" id="read_status" name="read_status" tabindex="0">
+                        <label>I finished reading this book</label>
+                    </div>
+                </div>
+                <div class="field">
+                    <input type="file" id="cover-photo-btn">
+                    <label for="cover-photo-btn" class="ui huge green button">
+                        <i class="ui upload icon"></i>
+                        Upload Cover Photo
+                    </label>
+                </div>
+
+
+                <button id="clear-btn" class="ui button" type="button">Clear Fields</button>
+            </form>
+        </div>
+        <div class="actions">
+            <div class="ui cancel button">Cancel</div>
+            <div class="ui ok green button" id="add-book-btn">Add Book </div>
+        </div>
+    </div>
+    <script src="index.js"></script>
+</body>
+
+</html>
